@@ -11,6 +11,6 @@ if __name__ == "__main__":
             i = 1
             for n in argv:
                 print(f"{i}: {argv[i]}")
-                i+=1
+                i += 1
                 if i > (len(argv) - 1):
                     break
