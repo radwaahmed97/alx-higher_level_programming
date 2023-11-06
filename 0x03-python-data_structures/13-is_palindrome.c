@@ -8,7 +8,7 @@
  * Return: pointer to first node in reversed list
  */
 
-void reverse_listint(listint_t **head)
+listint_t *reverse_listint(listint_t **head)
 {
 	listint_t *previous = NULL;
 	listint_t *present = *head;
@@ -21,7 +21,7 @@ void reverse_listint(listint_t **head)
 		previous = present;
 		present = next;
 	}
-	*head = previous;
+	return (previous);
 }
 
 
