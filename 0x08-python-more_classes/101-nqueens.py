@@ -20,6 +20,7 @@ if __name__ == "__main__":
         print("N must be at least 4")
         exit(1)
 
+    # initializing answer list
     for i in range(n):
         post.append([i, None])
 
@@ -52,9 +53,10 @@ if __name__ == "__main__":
             clear_a(x)
             if reject(x, y):
                 post[x][1] = y
-                if (x == n - 1):
+                if (x == n - 1): # accepting solution
                     print(post)
                 else:
-                    nqueens(x + 1)
+                    nqueens(x + 1) # moves to next x value to cont.
 
+    # starting recursive process at x = 0
     nqueens(0)
