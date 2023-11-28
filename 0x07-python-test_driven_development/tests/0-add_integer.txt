@@ -9,25 +9,25 @@ This is a text file in reStructuredText format for testing.  First import
 
     >>> add_integer = __import__("0-add_integer").add_integer
 
-Now use it:
+Now checking it:
 
-    >>> add_integer(2, 3)
-    5
+    >>> add_integer(5, 3)
+    8
 
-    >>> add_integer(2.2, 2)
-    4
+    >>> add_integer(6.2, 2)
+    8
 
-    >>> add_integer(6, 3.5)
-    9
+    >>> add_integer(6, 4.5)
+    10
 
     >>> add_integer(2.2, 4.4)
     6
 
-    >>> add_integer(True, 2)
+    >>> add_integer(True, 10)
     Traceback (most recent call last):
     TypeError: a must be an integer
     
-    >>> add_integer(2, False)
+    >>> add_integer(9, False)
     Traceback (most recent call last):
     TypeError: b must be an integer
 
@@ -35,23 +35,23 @@ Now use it:
     Traceback (most recent call last):
     TypeError: a must be an integer
  
-    >>> add_integer("hola", 5)
+    >>> add_integer("hello!", 10)
     Traceback (most recent call last):
     TypeError: a must be an integer
 
-    >>> add_integer("hola", "mundo")
+    >>> add_integer("hello", "radwa!")
     Traceback (most recent call last):
     TypeError: a must be an integer
 
-    >>> add_integer(5, "hola")
+    >>> add_integer(10, "hello!")
     Traceback (most recent call last):
     TypeError: b must be an integer
 
-    >>> add_integer(-2, -2)
-    -4
+    >>> add_integer(-7, -2)
+    -9
 
-    >>> add_integer(-2, 3)
-    1
+    >>> add_integer(-9, 3)
+    -6
 
     >>> add_integer(-4, 6)
     2
