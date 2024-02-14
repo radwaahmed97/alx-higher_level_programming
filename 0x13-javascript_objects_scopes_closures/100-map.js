@@ -7,4 +7,5 @@ for (let i = 0; i < list.length; i++) {
 }
 console.log(newlist);
 */
+console.log(list);
 console.log(list.map((element, i) => element * i));
