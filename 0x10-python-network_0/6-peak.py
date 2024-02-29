@@ -4,14 +4,23 @@
 
 def find_peak(list_of_integers):
     """finds peak in unsorted list of integers"""
-    ls = list_of_integer
-    length = len(ls)
-    if length == 0:
-        return
-    middle = length // 2
-    if ((middle == length - 1 or ls[middle] >= ls[middle + 1])
-            and (middle == 0 or ls[middle] >= ls[middle - 1])):
-        return ls[middle]
-    if (middle != length - 1 and ls[middle + 1] > ls[middle]):
-        return find_peak(ls[middle + 1:])
-    return find_peak(ls[:middle])
+    if list_of_integers == []:
+        return None
+
+    length = len(list_of_integers)
+    m = int(length / 2)
+    li = list_of_integers
+
+    if m - 1 < 0 and m + 1 >= length:
+        return li[m]
+    elif m - 1 < 0:
+        return li[m] if li[m] > li[m + 1] else li[m + 1]
+    elif m + 1 >= length:
+        return li[m] if li[m] > li[m - 1] else li[m - 1]
+
+    if li[m - 1] < li[m] > li[m + 1]:
+        return li[m]
+
+    if li[m + 1] > li[m - 1]:
+        return find_peak(li[m:])
+    return find_peak(li[:m])
